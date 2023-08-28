@@ -1,4 +1,4 @@
-use strict; # restrict unsafe constructs
+use strict; # restrict unsafe construct
 use warnings; # control optional warnings
 
 use File::Copy;
@@ -27,12 +27,6 @@ sub main {
             my $fp_chd = $fp_cue;
             $fp_chd =~ s/cue/chd/;
             system("chdman","createcd","-f","-i",$fp_cue,"-o",$fp_chd);
-
-            my $rm_cue = $dir;
-            my $rm_bin = $dir;
-            $rm_cue .= '/*.cue';
-            $rm_bin .= '/*.bin';
-            #system("rm",${rm_cue});
 
             opendir(DIR, $dir) or die $!;
 
